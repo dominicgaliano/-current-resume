@@ -8,7 +8,7 @@
 \documentclass[letterpaper,11pt]{article}
 
 \usepackage{latexsym}
-\usepackage[empty]{fullpage}
+\usepackage[margin=0.75in]{geometry}
 \usepackage{titlesec}
 \usepackage{marvosym}
 \usepackage[usenames,dvipsnames]{color}
@@ -123,7 +123,7 @@
 \section{Education}
   \resumeSubHeadingListStart
     \resumeSubheading
-      {Georgia Institute of Technology}{Atlanta, GA}
+      {Georgia Institute of Technology}{Remote}
       {Master of Science in Computer Science, \textnormal{GPA 4.00}}{Aug. 2024 -- Present}
     \resumeSubheading
       {The University of Texas at Austin}{Austin, TX}
@@ -135,27 +135,29 @@
 \section{Experience}
   \resumeSubHeadingListStart    
     \resumeSubheading
-      {Software Engineer}{May 2025 -- Present}
-      {Cash App}{Boston, MA}
+      {Software Engineer}{May 2025 -- Feb. 2026}
+      {Cash App}{Remote}
       \resumeItemListStart
-        \resumeItem{Cash App Lending}
+        \resumeItem{Backend engineer on Cash App Borrow (20M MAU), contributing to the launch of Afterpay on Cash App Card within a distributed Kotlin microservice architecture that originates \$200M/day under a 99.99\% availability SLO}
+        \resumeItem{Led backend development of Pre-Purchase Financing (Afterpay on Cash App Card), designing a new 6-week lending program and payment schedule algorithm, integrating external bank/compliance systems into origination, and implementing refund, dispute, and balance recovery logic in a high-scale financial system}
+        \resumeItem{Designed deterministic eligibility flows and Kafka-based state propagation to eliminate cross-service state inconsistencies in an at-least-once, idempotent event-driven system}
+        \resumeItem{Overhauled the lending experimentation system by migrating to a centralized experiments table and removing experiment state from core domain entities, improving data consistency, schema clarity, and long-term maintainability}
+        \resumeItem{Designed and implemented Temporal workflows to guarantee monthly statement correctness via durable scheduling and idempotent synthetic event emission}
       \resumeItemListEnd
     \resumeSubheading
-      {Software Engineer}{February 2024 -- May 2025}
-      {Deloitte}{Boston, MA}
+      {Software Engineer}{Feb. 2024 -- May 2025}
+      {Deloitte}{Remote}
       \resumeItemListStart
-        \resumeItem{Designed and developed a metadata onboarding pipeline consisting of five C\# microservices using  ASP.NET, PostgreSQL, Google Cloud Storage, Pub/Sub and GKE, supporting a terabyte-scale data archival system}
-        \resumeItem{Developed an LLM-powered chatbot with Gemini 1.5 Pro and Gradio to automate new hire onboarding tasks, reducing manual support interactions by 75\%}
-        \resumeItem{Led a geographically diverse team of developers, conducting weekly code reviews and providing technical mentorship to ensure high-quality, on-schedule deliverables}
-        \resumeItem{Collaborated with a globally distributed, multidisciplinary group of stakeholders to resolve integration challenges, align development with compliance regulations, and ensure long-term scalability and cost savings}
+        \resumeItem{Architected a five-service C\# microservice pipeline (ASP.NET, PostgreSQL, GKE, Pub/Sub) to process and archive terabyte-scale metadata workloads using event-driven coordination and cloud-native deployment patterns}
+        \resumeItem{Built an internal LLM-powered onboarding assistant in Python using retrieval-augmented generation (RAG) with vector search over internal documentation, automating support workflows and reducing manual onboarding interactions by 75\%}
+        \resumeItem{Led a geographically distributed team of engineers, conducting design reviews and mentoring developers to deliver production microservices on schedule}
       \resumeItemListEnd
     \resumeSubheading
-      {Software Engineering Intern}{May 2022 -- August 2022}
+      {Software Engineering Intern}{May 2022 -- Aug. 2022}
       {Samsung Semiconductor}{Austin, TX}
       \resumeItemListStart
-        \resumeItem{Designed a full-stack web application using Django and React to monitor and visualize real-time manufacturing conditions, reducing daily task time by 90\% for a team of 7 engineers}
-        \resumeItem{Integrated backend code with Samsung's private cloud to enable real-time aggregation of process data, improving data accessibility and analytics capabilities}
-        \resumeItem{Engineered a comprehensive digital knowledge base within Confluence, streamlining onboarding processes for 15 new engineers and technicians while enhancing information accessibility in preparation for an anticipated workforce expansion}
+        \resumeItem{Designed and built a full-stack manufacturing monitoring platform (Django, React) to visualize real-time semiconductor process conditions, reducing manual analysis time by 90\% for a team of 7 engineers}
+        \resumeItem{Integrated backend services with Samsung's private cloud to aggregate and stream real-time process data, improving system observability and analytics accessibility}
       \resumeItemListEnd
   \resumeSubHeadingListEnd
 
@@ -165,20 +167,19 @@
       \resumeProjectHeading
           {\textbf{Distributed File System} $|$ \emph{C++, gRPC, Protocol Buffers}}{Fall 2024}
           \resumeItemListStart
-            \resumeItem{Created a distributed file system with client and server processes using C++, gRPC, and Protocol Buffers}
-            \resumeItem{Features include asynchronous, push-based file updates, client write lock mechanism, and local file caching}
+            \resumeItem{Built a distributed file system in C++ using gRPC and Protocol Buffers, implementing asynchronous push-based replication, client write locks, and local caching for consistency and performance}
           \resumeItemListEnd
       \resumeProjectHeading
           {\textbf{Multithreaded Proxy Cache Module} $|$ \emph{C}}{Fall 2024}
           \resumeItemListStart
-            \resumeItem{Developed a multithreaded cache process using POSIX shared memory and message queues, enabling multiple local proxy server instances to access and share files at in-memory speeds}
+            \resumeItem{Implemented a multithreaded proxy cache in C using POSIX shared memory and message queues, enabling concurrent proxy processes to share cached content with low-latency IPC}
           \resumeItemListEnd
-      \resumeProjectHeading
-          {\textbf{Homebase App} $|$ \emph{Swift, Firebase}}{Fall 2022}
-          \resumeItemListStart
-            \resumeItem{Developed an iOS app using Swift and Firebase to enhance roommate collaboration and communication, featuring chore and event reminders, a shared shopping list, and task tracking}
-            \resumeItem{Used CoreData for local data storage, UIKit for frontend UI design, and EventKit for calendar integration}
-          \resumeItemListEnd
+      % \resumeProjectHeading
+      %     {\textbf{Homebase App} $|$ \emph{Swift, Firebase}}{Fall 2022}
+      %     \resumeItemListStart
+      %       \resumeItem{Developed an iOS app using Swift and Firebase to enhance roommate collaboration and communication, featuring chore and event reminders, a shared shopping list, and task tracking}
+      %       \resumeItem{Used CoreData for local data storage, UIKit for frontend UI design, and EventKit for calendar integration}
+      %     \resumeItemListEnd
     \resumeSubHeadingListEnd
 
 %
@@ -186,11 +187,11 @@
 \section{Technical Skills}
  \begin{itemize}[leftmargin=0.15in, label={}]
     \small{\item{
-     \textbf{Languages}{: C\#, Python, Java, C/C++, Go, Swift, JavaScript/TypeScript, SQL (PostgreSQL), HTML/CSS} \\
-     \textbf{Frameworks}{: ASP.NET, Entity Framework, Django, Flask, FastAPI, Spring Boot, Hibernate, Express, React, Redux, Next.JS, Svelte} \\
-     \textbf{Tools and Infrastructure}{: Kubernetes, Docker, Github Actions, OpenTelemetry, Prometheus, Grafana, gRPC, Nginx, Redis, PostgreSQL, GraphQL, GDB, Make, Git, Linux (Amazon, Ubuntu, Debian) } \\
-     \textbf{Libraries}{: Protocol Buffers, Langchain, Pandas, Matplotlib } \\
-     \textbf{Certifications}{: AWS Certified Cloud Practitioner, Google Cloud Associate Cloud Engineer}
+     \textbf{Languages}{: Kotlin, C\#, Java, Go, Python, C/C++, SQL (MySQL, PostgreSQL), TypeScript} \\
+     \textbf{Distributed Systems}{: Kafka, SQS, Temporal, gRPC, REST, Protobuf, Event-driven architecture, Idempotent consumers, DLQs, Sharded databases (Vitess), Microservices} \\
+     \textbf{Databases}{: Aurora MySQL, Vitess, PostgreSQL, DynamoDB, Snowflake, Redis, Hibernate, jOOQ} \\
+     \textbf{Infrastructure}{: Kubernetes, Docker, GKE, AWS, GCP, Buildkite, GitHub Actions} \\
+     \textbf{Observability \& Reliability}{: Datadog, Prometheus, Grafana, OpenTelemetry, SLO-driven development, Production backfills, Incident response}
     }}
  \end{itemize}
 
