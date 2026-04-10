@@ -139,10 +139,10 @@
       {Cash App}{Remote}
       \resumeItemListStart
         \resumeItem{Backend engineer on Cash App Borrow (20M MAU), contributing to the launch of Afterpay on Cash App Card within a distributed Kotlin microservice architecture that originates \$200M/day under a 99.99\% availability SLO}
-        \resumeItem{Led backend development of Pre-Purchase Financing (Afterpay on Cash App Card), designing a new 6-week lending program and payment schedule algorithm, integrating external bank/compliance systems into origination, and implementing refund, dispute, and balance recovery logic in a high-scale financial system}
+        \resumeItem{Led backend development of Pre-Purchase Financing (Afterpay on Cash App Card), designed a new 6-week lending program and payment schedule algorithm, integrated external bank/compliance systems into origination, and implemented refund, dispute, and balance recovery logic in a high-scale financial system}
         \resumeItem{Designed deterministic eligibility flows and Kafka-based state propagation to eliminate cross-service state inconsistencies in an at-least-once, idempotent event-driven system}
-        \resumeItem{Overhauled the lending experimentation system by migrating to a centralized experiments table and removing experiment state from core domain entities, improving data consistency, schema clarity, and long-term maintainability}
-        \resumeItem{Designed and implemented Temporal workflows to guarantee monthly statement correctness via durable scheduling and idempotent synthetic event emission}
+        \resumeItem{Architected a centralized experimentation model for lending, removing experiment state from core domain entities and significantly improving data consistency, schema clarity, and long-term maintainability}
+        \resumeItem{Engineered a fault-tolerant workflow system to guarantee complete monthly statements by proactively generating events for inactive loans and scheduling recurring processing for overdue accounts}
       \resumeItemListEnd
     \resumeSubheading
       {Software Engineer}{Feb. 2024 -- May 2025}
@@ -188,7 +188,7 @@
  \begin{itemize}[leftmargin=0.15in, label={}]
     \small{\item{
      \textbf{Languages}{: Kotlin, C\#, Java, Go, Python, C/C++, SQL (MySQL, PostgreSQL), TypeScript} \\
-     \textbf{Distributed Systems}{: Kafka, SQS, Temporal, gRPC, REST, Protobuf, Event-driven architecture, Idempotent consumers, DLQs, Sharded databases (Vitess), Microservices} \\
+     \textbf{Distributed Systems}{: Kafka, SQS, Temporal, gRPC, REST, Protobuf, Event-driven architecture, Idempotent consumers, DLQs, Sharded databases (Vitess), Microservices, Temporal} \\
      \textbf{Databases}{: Aurora MySQL, Vitess, PostgreSQL, DynamoDB, Snowflake, Redis, Hibernate, jOOQ} \\
      \textbf{Infrastructure}{: Kubernetes, Docker, GKE, AWS, GCP, Buildkite, GitHub Actions} \\
      \textbf{Observability \& Reliability}{: Datadog, Prometheus, Grafana, OpenTelemetry, SLO-driven development, Production backfills, Incident response}
