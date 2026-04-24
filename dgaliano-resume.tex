@@ -106,14 +106,20 @@
 \begin{document}
 
 %----------HEADING----------
-% \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
-%   \textbf{\href{http://sourabhbajaj.com/}{\Large Sourabh Bajaj}} & Email : \href{mailto:sourabh@sourabhbajaj.com}{sourabh@sourabhbajaj.com}\\
-%   \href{http://sourabhbajaj.com/}{http://www.sourabhbajaj.com} & Mobile : +1-123-456-7890 \\
-% \end{tabular*}
+% default: don't show address
+\newif\ifshowaddress
+\showaddressfalse
+
+% allow override from Makefile
+\ifdefined\WITHADDRESS
+  \showaddresstrue
+\fi
 
 \begin{center}
     \textbf{\Huge \scshape Dominic Galiano} \\ \vspace{1pt}
-    \small 240-838-0080 $|$ \href{mailto:dgaliano3@gatech.edu}{\underline{dgaliano3@gatech.edu}} $|$ 
+    \small 
+    \ifshowaddress Boston, MA $|$ \fi
+    240-838-0080 $|$ \href{mailto:dgaliano3@gatech.edu}{\underline{dgaliano3@gatech.edu}} $|$ 
     \href{https://linkedin.com/in/dominic-galiano/}{\underline{linkedin.com/in/dominic-galiano/}} $|$
     \href{https://github.com/dominicgaliano}{\underline{github.com/dominicgaliano}}
 \end{center}
@@ -138,11 +144,13 @@
       {Software Engineer}{May 2025 -- Feb. 2026}
       {Cash App}{Remote}
       \resumeItemListStart
-        \resumeItem{Backend engineer on Cash App Borrow (20M MAU), contributing to the launch of Afterpay on Cash App Card within a distributed Kotlin microservice architecture that originates \$200M/day under a 99.99\% availability SLO}
-        \resumeItem{Led backend development of Pre-Purchase Financing (Afterpay on Cash App Card), designed a new 6-week lending program and payment schedule algorithm, integrated external bank/compliance systems into origination, and implemented refund, dispute, and balance recovery logic in a high-scale financial system}
-        \resumeItem{Designed deterministic eligibility flows and Kafka-based state propagation to eliminate cross-service state inconsistencies in an at-least-once, idempotent event-driven system}
-        \resumeItem{Architected a centralized experimentation model for lending, removing experiment state from core domain entities and significantly improving data consistency, schema clarity, and long-term maintainability}
-        \resumeItem{Engineered a fault-tolerant workflow system to guarantee complete monthly statements by proactively generating events for inactive loans and scheduling recurring processing for overdue accounts}
+        \resumeItem{Backend engineer on Cash App Borrow (20M MAU), built Kotlin-based distributed services supporting a high-scale lending system processing \$200M/day at 99.99\% availability}
+        \resumeItem{Fixed consistency issues in the credit eligibility pipeline caused by out-of-sync customer state between services; implemented idempotent state handling and cross-service integrations to prevent invalid loan eligibility decisions and reduce regulatory risk}
+        \resumeItem{Designed and implemented key components of a new pre-purchase financing product (Afterpay on Cash App Card), including repayment scheduling logic, refund and dispute handling, and integrations with external banking and compliance systems}
+        \resumeItem{Improved long-term experimentation infrastructure by migrating fragmented JSON-based experiment state into a centralized data model, enabling lifecycle management of experiment assignments and reducing accumulation of long-lived stale experiments across lending systems}
+        \resumeItem{Built a fault-tolerant workflow system ensuring complete monthly statement generation by producing events for inactive loans and scheduling processing for delinquent accounts, ensuring customers received accurate and complete views of loan activity}
+        \resumeItem{Accelerated large-scale notification system migration by introducing AI-assisted automation for repetitive refactoring tasks, significantly reducing manual engineering effort across multiple notification pipelines}
+        \resumeItem{Improved reliability of Cash App notifications across multiple engineering teams by addressing production-test parity issues through augmentation of an internal code-generation tool to eliminate hardcoded identifiers in notification unit tests}
       \resumeItemListEnd
     \resumeSubheading
       {Software Engineer}{Feb. 2024 -- May 2025}
@@ -162,21 +170,21 @@
   \resumeSubHeadingListEnd
 
 %-----------PROJECTS-----------
-\section{Projects}
- \begin{itemize}[leftmargin=0.15in, label={}]
-    \small{\item{
-            \textbf{Distributed File System}{: Built a distributed file system in C++ using gRPC and Protocol Buffers, implementing asynchronous push-based replication, client write locks, and local caching for consistency and performance} \\
-         \textbf{Multithreaded Proxy Cache Module}{: Implemented a multithreaded proxy cache in C using POSIX shared memory and message queues, enabling concurrent proxy processes to share cached content with low-latency IPC}
-    }}
- \end{itemize}
+% \section{Projects}
+%  \begin{itemize}[leftmargin=0.15in, label={}]
+%     \small{\item{
+%             \textbf{Distributed File System (C++)}{: Built a replicated file system using gRPC/Protobuf featuring asynchronous push-based replication, client write locks, and local caching} \\
+%          \textbf{Multithreaded Proxy Cache Module (C)}{: Implemented a high-performance proxy using POSIX shared memory and message queues for low-latency IPC}
+%     }}
+%  \end{itemize}
 
 %
 %-----------PROGRAMMING SKILLS-----------
 \section{Technical Skills}
  \begin{itemize}[leftmargin=0.15in, label={}]
     \small{\item{
-     \textbf{Languages}{: Kotlin, C\#, Java, Go, Python, C/C++, SQL (MySQL, PostgreSQL), TypeScript} \\
-     \textbf{Distributed Systems}{: Kafka, SQS, Temporal, gRPC, REST, Protobuf, Event-driven architecture, Idempotent consumers, DLQs, Sharded databases (Vitess), Microservices, Temporal} \\
+     \textbf{Languages}{: Kotlin, C\#, Java, Go, Python, C, C++, SQL (MySQL, PostgreSQL), TypeScript} \\
+     \textbf{Distributed Systems}{: Kafka, SQS, gRPC, REST, Protobuf, Event-driven architecture, Idempotent consumers, DLQs, Sharded databases (Vitess), Microservices, Temporal} \\
      \textbf{Databases}{: Aurora MySQL, Vitess, PostgreSQL, DynamoDB, Snowflake, Redis, Hibernate, jOOQ} \\
      \textbf{Infrastructure}{: Kubernetes, Docker, GKE, AWS, GCP, Buildkite, GitHub Actions} \\
      \textbf{Observability \& Reliability}{: Datadog, Prometheus, Grafana, OpenTelemetry, SLO-driven development, Production backfills, Incident response}
